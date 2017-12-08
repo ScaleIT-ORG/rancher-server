@@ -1,6 +1,6 @@
-#Rancher Server
+# ScaleIT Platform Container Manager - Rancher Server
 
-##Get started:
+## Get started:
 1. Rename .env.default file .env and run "sh run.sh" in the current directory. This script runs the docker-compose.yml with 
 Rancher Server specifications and after that executes the docker command in order to run the rancher host (agent). 
 2. In Rancher, go to Admin -> Settings and update the Host Registration
@@ -11,7 +11,7 @@ if-the-ip-of-rancher-server-has-changed)
 3. (On First Start on new Machine) Copy Rancher Token to .env file
 4. Run in Terminal "docker-compose stop" and "docker-compose up"
 
-##Backup:
+## Backup:
 In order to provide backups for rancher server, one needs to copy the
  directory with mysql DB (./serverdb). One possible strategy to do this: 
 
@@ -25,29 +25,29 @@ In order to provide backups for rancher server, one needs to copy the
 "- <some backup directory>/serverdb:/var/lib/mysql"
 6. Save changes and run "sh run.sh"
 
-##Oeffentliche Ports:
+## Oeffentliche Ports:
  -8080
 
-#Elasticsearch
+# Elasticsearch
 
-##Beschreibung
+## Beschreibung
 Elasticsearch
 
-##Oeffentliche Ports
+## Oeffentliche Ports
  -
 
-#Logstash
+# Logstash
 
-##Beschreibung
+## Beschreibung
 Logstash
 
-##Oeffentliche ports:
+## Oeffentliche ports:
  -
 
-#Kibana
+# Kibana
 
-##Beschreibung
+## Beschreibung
 Kibana
 
-##Oeffentliche Ports
+## Oeffentliche Ports
  - 5601
