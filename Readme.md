@@ -15,7 +15,7 @@ if-the-ip-of-rancher-server-has-changed)
 There is the separate software as a submodule, called Rancher Active Proxy, which is an all-in-one reverse proxy for [Rancher](http://rancher.com), supporting Letsencrypt out of the box!
 
 ### Easy Setup with catalog
-Add `https://github.com/adi90x/rancher-active-proxy.git` to your custom catalog list( Rancher > Admin > Settings ).
+Add `https://github.com/ScaleIT-ORG/spcm-active-proxy-rancher.git` to your custom catalog list (Rancher > Admin > Settings).
 Then go to catalog and install Rancher Active Proxy !
 
 ### How to configure proxy for your application
