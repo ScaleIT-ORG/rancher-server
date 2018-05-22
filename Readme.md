@@ -23,8 +23,26 @@ Here are described steps that are needed to provide DNS-forwarding to an applica
 All that you need is to add approriate labels to the docker-compose.yml 
 that starts your application. 
 
-The first label is `rap.port: 'some port's number'`. This label defines the port of the container to use ( only needed if several port are exposed ). Default "Expose Port" or "80".
+The first label is `rap.port: 'some_port's_number'`. This label defines the port of the container to use (is only needed if several port are exposed ). Default "Expose Port" or "80".
 
 The second label is `rap.host: dns-name.of.your.app`. This label defines virtual host to use ( several value could be separate by , ).
 
-These are two basic label that you need to provide reverse proxy for your app. If you need to elaborate more complex stuff, check the documentation of the other possible labels by reverse proxy service: https://github.com/adi90x/rancher-active-proxy#summary-of-available-labels-for-proxied-containers 
+The possible example can look like this: 
+    
+                     version: '2'
+                     services:
+                       myapp:
+                         image: app_image/my_app
+                         
+                         volumes:
+                           - some/volumes
+                           
+                         ports:
+                           - 80:80          #your app may use other ports
+                         labels:
+                           rap.port: '80'   #example port 
+                           rap.host: myapp.example.com
+If SSL usage is required, then the volume, which contains the corresponding certificates, has to be added to the `docker-compose.yml` file, for more detailed infromation please refer to the [correspondig section](https://github.com/adi90x/rancher-active-proxy#ssl-support) of the original documentation.
+These are basic steps described that are needed to provide reverse proxy for your app. If you need to elaborate more complex stuff, check the documentation of the other [possible labels](https://github.com/adi90x/rancher-active-proxy#summary-of-available-labels-for-proxied-containers) by reverse proxy service. 
+
+If you need to provide more advanced general settings, please refer to the [full documentation](https://github.com/adi90x/rancher-active-proxy) 
