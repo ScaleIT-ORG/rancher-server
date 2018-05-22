@@ -29,19 +29,20 @@ The second label is `rap.host: dns-name.of.your.app`. This label defines virtual
 
 The possible example can look like this: 
     
-                     version: '2'
-                     services:
-                       myapp:
-                         image: app_image/my_app
-                         
-                         volumes:
-                           - some/volumes
-                           
-                         ports:
-                           - 80:80          #your app may use other ports
-                         labels:
-                           rap.port: '80'   #example port 
-                           rap.host: myapp.example.com
+    version: '2'
+    services:
+      myapp:
+        image: app_image/my_app
+
+        volumes:
+          - my/app/volumes
+
+        ports:
+          - 80:80          
+        labels:
+          rap.port: '80'   
+          rap.host: myapp.example.com
+
 If SSL usage is required, then the volume, which contains the corresponding certificates, has to be added to the `docker-compose.yml` file, for more detailed infromation please refer to the [correspondig section](https://github.com/adi90x/rancher-active-proxy#ssl-support) of the original documentation.
 These are basic steps described that are needed to provide reverse proxy for your app. If you need to elaborate more complex stuff, check the documentation of the other [possible labels](https://github.com/adi90x/rancher-active-proxy#summary-of-available-labels-for-proxied-containers) by reverse proxy service. 
 
