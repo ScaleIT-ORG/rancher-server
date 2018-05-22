@@ -1,7 +1,7 @@
 # ScaleIT Platform Container Manager - Rancher Server
 
 ## Get started:
-1. Rename .env.default file .env and run `docker-compose up` in the current directory. This script runs the docker-compose.yml with 
+1. Rename `.env.default`file to `.env` and run `docker-compose up` in the current directory. This script runs the docker-compose.yml with 
 Rancher Server specifications. 
 2. In Rancher UI, go to Admin -> Settings and update the Host Registration
  with the updated URL for Rancher server. Please note that it must include
