@@ -42,6 +42,7 @@ The possible example can look like this:
         labels:
           rap.port: '80'   
           rap.host: myapp.example.com
+          rap.le_host: myapp.example.com
 
 If SSL usage is required, then the volume, which contains the corresponding certificates, has to be added to the `docker-compose.yml` file, for more detailed infromation please refer to the [correspondig section](https://github.com/adi90x/rancher-active-proxy#ssl-support) of the original documentation.
 These are basic steps described that are needed to provide reverse proxy for your app. If you need to elaborate more complex stuff, check the documentation of the other [possible labels](https://github.com/adi90x/rancher-active-proxy#summary-of-available-labels-for-proxied-containers) by reverse proxy service. 
