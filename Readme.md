@@ -23,9 +23,9 @@ Here are described steps that are needed to provide DNS-forwarding to an applica
 All that you need is to add approriate labels to the docker-compose.yml 
 that starts your application. 
 
-The first label is `rap.port: 'some_port's_number'`. This label defines the port of the container to use (is only needed if several port are exposed ). Default "Expose Port" or "80".
+The first label is `rap.port: 'some_port's_number'`. This label defines the port of the container to use (is only needed if several port are exposed ). If this label is not defined, the default port 80 will be used.
 
-The second label is `rap.host: dns-name.of.your.app`. This label defines virtual host to use ( several value could be separate by , ).
+The second label is `rap.host: dns-name.of.your.app`. This label defines virtual host to use (several value could be separate by , ).
 
 The possible example can look like this: 
     
