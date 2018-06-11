@@ -4,12 +4,13 @@
 1. Rename `.env.default`file to `.env` and run `docker-compose up` in the current directory. This script runs the docker-compose.yml with 
 Rancher Server specifications. 
 2. In Rancher UI, go to Admin -> Settings and update the Host Registration
- with the updated URL for Rancher server. Please note that it must include
- the exposed port that you started Rancher server with
+ with the updated URL for Rancher server (e.g. staging.server.edu:8080). Please note that it must include
+ the exposed port (8080) that you started Rancher server with
  (https://docs.rancher.com/rancher/v1.2/en/faqs/server/#what-happens-
 if-the-ip-of-rancher-server-has-changed)
-3. (On First Start on new Machine) Copy Rancher Token to .env file into field `TOKEN=` direct after `=` symbol.
-4. Run in Terminal `docker-compose stop` and after that `bash run.sh`. run.sh script executes current docker-compose.yml file and also launches the rancher agent (host). 
+3. Go to Infrastructure -> Hosts. If you see any hosts already started, consider to delete them if their state is not "Running" during next 2 Minutres. Afterwards click "Add Host" button and you will be redirected to the page with the docker command which has to be run on your server. So just run that command with the command line of your server (consider to copy the command without "sudo", if you do not need admin permission). 
+
+Now the rancher server is set up and ready for further exploitations. 
 
 ## Proxy
 There is the separate software as a submodule, called Rancher Active Proxy, which is an all-in-one reverse proxy for [Rancher](http://rancher.com), supporting Letsencrypt out of the box!
